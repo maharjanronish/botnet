@@ -1,27 +1,44 @@
-@model SimpleInterestAndStudentApp.Models.StudentDetails
+@model WebApp_Ronish_04.Models.StudentDetails
 @{
-    Layout = null;
+    ViewData["Title"] = "Create Student";
 }
 
-<h2>Enter Student Details</h2>
+<h2 class="text-2xl font-bold mb-4">Create Student</h2>
 
-<form method="post" asp-action="Create" asp-controller="Student">
-    <table style="width:500px">
-        <tr>
-            <td>Name</td>
-            <td><input type="text" asp-for="Name" /></td>
-        </tr>
-        <tr>
-            <td>Address</td>
-            <td><input type="text" asp-for="Address" /></td>
-        </tr>
-        <tr>
-            <td>Gender</td>
-            <td><input type="text" asp-for="Gender" /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input type="submit" value="Submit" /></td>
-        </tr>
-    </table>
+<form asp-action="Create" method="post" class="space-y-4 max-w-md">
+    <div>
+        <label asp-for="Name" class="block font-medium"></label>
+        <input asp-for="Name" class="form-input w-full border rounded p-2" />
+        <span asp-validation-for="Name" class="text-red-500 text-sm"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email" class="block font-medium"></label>
+        <input asp-for="Email" class="form-input w-full border rounded p-2" />
+        <span asp-validation-for="Email" class="text-red-500 text-sm"></span>
+    </div>
+
+    <div>
+        <label asp-for="Address" class="block font-medium"></label>
+        <input asp-for="Address" class="form-input w-full border rounded p-2" />
+        <span asp-validation-for="Address" class="text-red-500 text-sm"></span>
+    </div>
+
+    <div>
+        <label asp-for="PhoneNumber" class="block font-medium"></label>
+        <input asp-for="PhoneNumber" class="form-input w-full border rounded p-2" />
+        <span asp-validation-for="PhoneNumber" class="text-red-500 text-sm"></span>
+    </div>
+
+    <div>
+        <label asp-for="Course" class="block font-medium"></label>
+        <input asp-for="Course" class="form-input w-full border rounded p-2" />
+        <span asp-validation-for="Course" class="text-red-500 text-sm"></span>
+    </div>
+
+    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Submit</button>
 </form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

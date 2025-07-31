@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using SimpleInterestAndStudentApp.Models;
+using WebApp_Ronish_04.Models;
 
-namespace SimpleInterestAndStudentApp.Controllers
+namespace WebApp_Ronish_04.Controllers
 {
     public class StudentController : Controller
     {
@@ -14,12 +14,11 @@ namespace SimpleInterestAndStudentApp.Controllers
         [HttpPost]
         public IActionResult Create(StudentDetails st)
         {
-            return View("ViewDetails", st);
-        }
+            // Assign random Id just for demo purposes (no DB)
+            st.Id = new Random().Next(1, 1000);
 
-        public IActionResult ViewDetails(StudentDetails st)
-        {
-            return View(st);
+            // Pass the model to ViewDetails view
+            return View("ViewDetails", st);
         }
     }
 }
