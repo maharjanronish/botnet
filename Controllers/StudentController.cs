@@ -1,8 +1,7 @@
-using System;
 using Microsoft.AspNetCore.Mvc;
-using WebApp_Ronish_04.Models;
+using Ronish.Models;
 
-namespace WebApp_Ronish_04.Controllers
+namespace Ronish.Controllers
 {
     public class StudentController : Controller
     {
@@ -13,10 +12,9 @@ namespace WebApp_Ronish_04.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(StudentDetails st)
+        public IActionResult Create(StudentDetails student)
         {
-            st.Id = new Random().Next(100, 999);
-            return View("ViewDetails", st);
+            return View("ViewDetails", student);
         }
     }
 }
