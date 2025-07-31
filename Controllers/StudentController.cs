@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using StudentApp.Models;
+using SimpleInterestAndStudentApp.Models;
 
-namespace StudentApp.Controllers
+namespace SimpleInterestAndStudentApp.Controllers
 {
     public class StudentController : Controller
     {
@@ -17,10 +17,9 @@ namespace StudentApp.Controllers
             return View("ViewDetails", st);
         }
 
-        [HttpGet]
-        public IActionResult ViewDetails()
+        public IActionResult ViewDetails(StudentDetails st)
         {
-            return View();
+            return View(st);
         }
     }
 }

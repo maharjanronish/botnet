@@ -1,0 +1,13 @@
+@model SimpleInterestAndStudentApp.Models.SimpleInterestModel
+@{
+    Layout = null;
+}
+
+<h2>Simple Interest Result</h2>
+
+<p>Principal: @Model.Principal</p>
+<p>Rate: @Model.Rate %</p>
+<p>Time: @Model.Time years</p>
+<p><strong>Interest: @Model.Interest</strong></p>
+
+<a href="@Url.Action("Index", "Home")">Calculate Again</a>

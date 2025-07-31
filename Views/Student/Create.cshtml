@@ -1,18 +1,27 @@
-@model StudentApp.Models.StudentDetails
+@model SimpleInterestAndStudentApp.Models.StudentDetails
 @{
-    ViewData["Title"] = "Create Student";
+    Layout = null;
 }
-<h2>Create Student</h2>
-<form asp-action="Create" method="post">
-    <label asp-for="Name"></label>
-    <input asp-for="Name" /><br/>
-    <label asp-for="Email"></label>
-    <input asp-for="Email" /><br/>
-    <label asp-for="Address"></label>
-    <input asp-for="Address" /><br/>
-    <label asp-for="PhoneNumber"></label>
-    <input asp-for="PhoneNumber" /><br/>
-    <label asp-for="Course"></label>
-    <input asp-for="Course" /><br/>
-    <button type="submit">Submit</button>
+
+<h2>Enter Student Details</h2>
+
+<form method="post" asp-action="Create" asp-controller="Student">
+    <table style="width:500px">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><input type="text" asp-for="Address" /></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input type="text" asp-for="Gender" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit" /></td>
+        </tr>
+    </table>
 </form>

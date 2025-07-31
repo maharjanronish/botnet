@@ -1,14 +1,12 @@
-@model StudentApp.Models.StudentDetails
+@model SimpleInterestAndStudentApp.Models.StudentDetails
 @{
-    ViewData["Title"] = "Student Details";
+    Layout = null;
 }
+
 <h2>Student Details</h2>
-<ul>
-    <li><strong>ID:</strong> @Model.Id</li>
-    <li><strong>Name:</strong> @Model.Name</li>
-    <li><strong>Email:</strong> @Model.Email</li>
-    <li><strong>Address:</strong> @Model.Address</li>
-    <li><strong>Phone Number:</strong> @Model.PhoneNumber</li>
-    <li><strong>Course:</strong> @Model.Course</li>
-</ul>
-<a asp-action="Create">Add Another</a>
+
+<p><strong>Name:</strong> @Model.Name</p>
+<p><strong>Address:</strong> @Model.Address</p>
+<p><strong>Gender:</strong> @Model.Gender</p>
+
+<a href="@Url.Action("Create", "Student")">Add Another Student</a>
