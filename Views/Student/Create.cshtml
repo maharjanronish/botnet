@@ -1,0 +1,18 @@
+@model StudentApp.Models.StudentDetails
+@{
+    ViewData["Title"] = "Create Student";
+}
+<h2>Create Student</h2>
+<form asp-action="Create" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" /><br/>
+    <label asp-for="Email"></label>
+    <input asp-for="Email" /><br/>
+    <label asp-for="Address"></label>
+    <input asp-for="Address" /><br/>
+    <label asp-for="PhoneNumber"></label>
+    <input asp-for="PhoneNumber" /><br/>
+    <label asp-for="Course"></label>
+    <input asp-for="Course" /><br/>
+    <button type="submit">Submit</button>
+</form>

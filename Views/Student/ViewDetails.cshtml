@@ -1,0 +1,14 @@
+@model StudentApp.Models.StudentDetails
+@{
+    ViewData["Title"] = "Student Details";
+}
+<h2>Student Details</h2>
+<ul>
+    <li><strong>ID:</strong> @Model.Id</li>
+    <li><strong>Name:</strong> @Model.Name</li>
+    <li><strong>Email:</strong> @Model.Email</li>
+    <li><strong>Address:</strong> @Model.Address</li>
+    <li><strong>Phone Number:</strong> @Model.PhoneNumber</li>
+    <li><strong>Course:</strong> @Model.Course</li>
+</ul>
+<a asp-action="Create">Add Another</a>
