@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
 using WebApp_Ronish_04.Models;
 
@@ -14,10 +15,7 @@ namespace WebApp_Ronish_04.Controllers
         [HttpPost]
         public IActionResult Create(StudentDetails st)
         {
-            // Assign random Id just for demo purposes (no DB)
-            st.Id = new Random().Next(1, 1000);
-
-            // Pass the model to ViewDetails view
+            st.Id = new Random().Next(100, 999);
             return View("ViewDetails", st);
         }
     }
